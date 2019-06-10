@@ -6,7 +6,7 @@ export default () => (
   <Navigation>
     <Navi>
       <li>
-        <NavLink exact to="/">
+        <NavLink exact to="/samplePage1">
           samplePage1
         </NavLink>
       </li>
