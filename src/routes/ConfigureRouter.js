@@ -6,8 +6,6 @@ import samplePage2 from "pages/samplePage2";
 import samplePage3 from "pages/samplePage3";
 
 const ConfigureRouter = ({ router }) => {
-  const { pathname } = router.location;
-  console.log(router);
   return (
     <Switch>
       <Route exact path="/" component={main} />
