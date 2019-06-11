@@ -1,5 +1,5 @@
 import React from "react";
-import useAxios from "common/hooks/useAxios";
+import { useAxios } from "common/hooks/hooksConfig";
 
 const TestComponent = () => {
   const { loading, data, error, refetch } = useAxios({
