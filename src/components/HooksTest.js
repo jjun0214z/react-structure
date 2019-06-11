@@ -1,12 +1,13 @@
 import React from "react";
-import useClick from "common/hooks/useClick";
+import useConfirm from "common/hooks/useConfirm";
 
 const TestComponent = () => {
-  const sayHello = () => console.log("hello");
-  const title = useClick(sayHello);
+  const onConfirm = () => console.log("onConfirm");
+  const onCancel = () => console.log("onCancel");
+  const confirmDelete = useConfirm("are you sure?", onConfirm, onCancel);
   return (
     <div>
-      <div ref={title}>Hooks TEST</div>
+      <button onClick={confirmDelete}>test button</button>
     </div>
   );
 };
