@@ -1,12 +1,15 @@
 import React from "react";
-import useBeforeLeave from "common/hooks/useBeforeLeave";
+import useAxios from "common/hooks/useAxios";
 
 const TestComponent = () => {
-  const beforeLife = () => console.log(111);
-  useBeforeLeave(beforeLife);
+  const { loading, data, error, refetch } = useAxios({
+    url: "https://jsonplaceholder.typicode.com/users"
+  });
   return (
     <div>
-      <div>1</div>
+      {data && data.data.map((data, idx) => <div key={idx}>{data.name}</div>)}
+      <div>{loading && "loading"}</div>
+      <button onClick={refetch}>refetch</button>
     </div>
   );
 };
