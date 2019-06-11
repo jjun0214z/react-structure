@@ -1,13 +1,12 @@
 import React from "react";
-import useConfirm from "common/hooks/useConfirm";
+import usePreventLeave from "common/hooks/usePreventLeave";
 
 const TestComponent = () => {
-  const onConfirm = () => console.log("onConfirm");
-  const onCancel = () => console.log("onCancel");
-  const confirmDelete = useConfirm("are you sure?", onConfirm, onCancel);
+  const { enablePrevent, disablePrevent } = usePreventLeave();
   return (
     <div>
-      <button onClick={confirmDelete}>test button</button>
+      <button onClick={enablePrevent}>protect</button>
+      <button onClick={disablePrevent}>unprotect</button>
     </div>
   );
 };
