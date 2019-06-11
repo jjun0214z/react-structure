@@ -1,12 +1,12 @@
 import React from "react";
-import usePreventLeave from "common/hooks/usePreventLeave";
+import useBeforeLeave from "common/hooks/useBeforeLeave";
 
 const TestComponent = () => {
-  const { enablePrevent, disablePrevent } = usePreventLeave();
+  const beforeLife = () => console.log(111);
+  useBeforeLeave(beforeLife);
   return (
     <div>
-      <button onClick={enablePrevent}>protect</button>
-      <button onClick={disablePrevent}>unprotect</button>
+      <div>1</div>
     </div>
   );
 };
