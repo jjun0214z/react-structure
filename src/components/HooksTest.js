@@ -16,6 +16,8 @@ const TestComponent = () => {
 };
 
 const Button = styled.button`
+  font-family: "Noto Sans KR";
+  font-weight: 300;
   ${({ theme, theme: { responsiveSize } }) => {
     return theme.responsiveStyles(
       responsiveSize.desctop,
